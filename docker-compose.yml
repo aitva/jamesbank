@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: aitva
+    
+  phpmyadmin:
+    depends_on: 
+      - db
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - "3003:80"
+    environment: 
+      PMA_HOST: db
+
+
+volumes:
+    db_data:
