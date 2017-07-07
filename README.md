@@ -1,2 +1,3 @@
-# jamesbank
-A DB to teach SQL.
+# sqlbank
+
+A generator for a bank like SQL database.
